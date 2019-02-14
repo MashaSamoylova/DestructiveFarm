@@ -37,6 +37,14 @@ python3 -m pip install -r requirements.txt
 ./start_server.sh
 ```
 
+### Запуск в докере:
+```bash
+git clone https://github.com/borzunov/DestructiveFarm
+cd DestructiveFarm
+docker build -t farm .
+docker run --name farm_container -p 1212:5000 -t farm
+```
+
 ## База данных флагов
 
 Сервер хранит все флаги, когда-либо присланные клиентами, в файле `flags.sqlite`. Если клиент присылает флаг, который уже есть в базе, этот флаг игнорируется. Флаги также можно добавлять вручную с помощью формы &laquo;Add Flags Manually&raquo;.
